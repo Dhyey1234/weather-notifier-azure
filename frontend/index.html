@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Weather Notifier</title>
+</head>
+<body>
+
+  <h2>Weather Notification Setup</h2>
+
+  <form id="weatherForm">
+    <input type="email" id="email" placeholder="Email" required /><br><br>
+
+    <input type="text" id="city" placeholder="City" required /><br><br>
+
+    <input type="time" id="time" required /><br><br>
+
+    <input type="number" id="days" placeholder="Number of days" required /><br><br>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <p id="msg"></p>
+
+  <script>
+    document.getElementById("weatherForm").addEventListener("submit", async function(e) {
+      e.preventDefault();
+
+      const data = {
+        email: document.getElementById("email").value,
+        city: document.getElementById("city").value,
+        time: document.getElementById("time").value,
+        days: document.getElementById("days").value
+      };
+
+      document.getElementById("msg").innerText = "Sending...";
+
+      // later we connect Azure Function here
+      console.log(data);
+
+      document.getElementById("msg").innerText = "Saved locally (backend not connected yet)";
+    });
+  </script>
+
+</body>
+</html>
