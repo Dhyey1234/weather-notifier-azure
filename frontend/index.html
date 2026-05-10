@@ -1,45 +1,17 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Weather Notifier</title>
-</head>
-<body>
-
-  <h2>Weather Notification Setup</h2>
-
-  <form id="weatherForm">
-    <input type="email" id="email" placeholder="Email" required /><br><br>
-
-    <input type="text" id="city" placeholder="City" required /><br><br>
-
-    <input type="time" id="time" required /><br><br>
-
-    <input type="number" id="days" placeholder="Number of days" required /><br><br>
-
-    <button type="submit">Submit</button>
-  </form>
-
-  <p id="msg"></p>
-
-  <script>
-    document.getElementById("weatherForm").addEventListener("submit", async function(e) {
-      e.preventDefault();
-
-      const data = {
-        email: document.getElementById("email").value,
-        city: document.getElementById("city").value,
-        time: document.getElementById("time").value,
-        days: document.getElementById("days").value
-      };
-
-      document.getElementById("msg").innerText = "Sending...";
-
-      // later we connect Azure Function here
-      console.log(data);
-
-      document.getElementById("msg").innerText = "Saved locally (backend not connected yet)";
-    });
-  </script>
-
-</body>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="KnowWeather — Beautiful daily weather notifications delivered to your inbox." />
+    <title>KnowWeather — Daily Weather in Your Inbox</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>

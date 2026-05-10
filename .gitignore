@@ -1,0 +1,18 @@
+# Azure Functions
+backend/local.settings.json
+backend/node_modules/
+backend/.funcignore
+backend/deploy.zip
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/.vercel/
+
+# Environment variables
+frontend/.env
+frontend/.env.local
+frontend/.env*.local
+
+# OS
+.DS_Store
